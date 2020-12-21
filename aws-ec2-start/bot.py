@@ -1,22 +1,23 @@
 import botocore
+import logging
 import sonrai.platform.aws.arn
 
+
 def run(ctx):
+    
+    resource_arn = sonrai.platform.aws.arn.parse(ctx.resource_id)
+    resource = resource_arn.  \
+        .assert_service("ec2") \
+        .assert_type("instance") \
+        .resource
 
-    print("hello world!")
+    ec2_client = ctx.get_client().get('ec2', resource_arn.region)
 
-
-    resource_id = ctx.resource_id
-    resource_arn = sonrai.platform.aws.arn.parse(resource_id)
-
-    print(resource_id)
 
     print(resource_arn)
 
     # Create ec2 client 
-    client = ctx.get_client().get('ec2')
-    
-    response = client.describe_instances()
+    response = ec2_client.describe_instances()
     
 
     print(response)
