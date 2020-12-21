@@ -1,7 +1,11 @@
-import boto3
+import botocore
 
-ec2 = boto3.client('ec2')
 
-response = ec2.describe_instances()
+def run(ctx):
+    # Create ec2 client 
+    client = ctx.get_client().get('ec2')
+    
+    response = client.describe_instances()
+    
 
-print(response)
+    print(response)
