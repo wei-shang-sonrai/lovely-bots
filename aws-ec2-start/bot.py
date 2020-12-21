@@ -19,5 +19,4 @@ def run(ctx):
     # Create ec2 client 
     response = ec2_client.describe_instances()
     
-
-    print(response)
+    logging.info('response: {}'.format(response))
