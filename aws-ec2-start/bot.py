@@ -6,7 +6,7 @@ import sonrai.platform.aws.arn
 def run(ctx):
     
     resource_arn = sonrai.platform.aws.arn.parse(ctx.resource_id)
-    resource = resource_arn.  \
+    resource = resource_arn  \
         .assert_service("ec2") \
         .assert_type("instance") \
         .resource
