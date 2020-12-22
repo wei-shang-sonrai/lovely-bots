@@ -11,10 +11,10 @@ def run(ctx):
         .assert_type("instance") \
         .resource
 
-    # Create ec2 client 
     ec2_client = ctx.get_client().get('ec2', resource_arn.region)
 
-    # stop the instance 
+    logging.info('Attempting to stop the instance {}'.format(resource))
+
     response = ec2_client.response = ec2_client.stop_instances(
         InstanceIds=[
             resource
@@ -22,4 +22,4 @@ def run(ctx):
         Force=True
     )
     
-    logging.info('response: {}'.format(response))
+    logging.info('AWS response: {}'.format(response))

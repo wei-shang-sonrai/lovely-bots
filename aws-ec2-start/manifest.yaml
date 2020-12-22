@@ -3,6 +3,8 @@
 version: 2020-12-21
 type: Remediation
 title: Start EC2 Instance
+description: |-
+  Starts a EC2 instance. 
 cloud: AWS
 operation: EXECUTE_PYTHON_SCRIPT
 authorName: Sonrai Security

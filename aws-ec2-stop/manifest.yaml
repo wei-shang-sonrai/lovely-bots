@@ -3,6 +3,8 @@
 version: 2020-12-22
 type: Remediation
 title: Stop EC2 Instance
+description: |-
+  Stops a EC2 instance. 
 cloud: AWS
 operation: EXECUTE_PYTHON_SCRIPT
 authorName: Sonrai Security
