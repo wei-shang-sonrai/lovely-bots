@@ -1,0 +1,9 @@
+  
+# Built-in Sonrai Bot: srn:supersonrai::bot/7b0c72f3-5d6c-4ce3-8839-012fd351378f
+version: 2020-12-22
+type: Remediation
+title: Stop EC2 Instance
+cloud: AWS
+operation: EXECUTE_PYTHON_SCRIPT
+authorName: Sonrai Security
+authorEmail: info@sonraisecurity.com

@@ -14,11 +14,12 @@ def run(ctx):
     # Create ec2 client 
     ec2_client = ctx.get_client().get('ec2', resource_arn.region)
 
-    # start the instance 
-    response = ec2_client.start_instances(
+    # stop the instance 
+    response = ec2_client.response = ec2_client.stop_instances(
         InstanceIds=[
             resource
-        ]
+        ],
+        Force=True
     )
     
     logging.info('response: {}'.format(response))
